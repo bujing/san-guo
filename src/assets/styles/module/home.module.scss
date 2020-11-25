@@ -1,0 +1,28 @@
+@import '../variables';
+
+.wrap {
+  // perspective: 300px; // 景深
+}
+
+.box {
+  height: 50px;
+  margin: 200px auto;
+  position: relative;
+  transform-style: preserve-3d;
+  width: 50px;
+}
+
+.hero {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 5px 2px #333;
+  height: 42px;
+  position: absolute;
+  width: 42px;
+
+  @each $camp, $value in $camp-color {
+    &.#{$camp} {
+      box-shadow: 0 0 5px 2px $value;
+    }
+  }
+}
